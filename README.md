@@ -1,29 +1,29 @@
-# vue-bootstrap-tooltip-practice
+# BootstrapVueのTooltipを複数要素に対して表示させるサンプルリポジトリ
 
-## Project setup
-```
-yarn install
-```
+## 実行
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
+```bash
+yarn serve
 ```
 
-### Compiles and minifies for production
-```
-yarn run build
+## plugin
+
+### pug
+
+```bash
+yarn add pug pug-plain-loader
 ```
 
-### Run your tests
+```js
+// vue.config.js
+module.exports = {
+  chainWebpack: config => {
+    config.module // add
+      .rule("pug")
+      .test(/\.pug$/)
+      .use("pug-plain-loader")
+      .loader("pug-plain-loader")
+      .end();
+  }
+}
 ```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
